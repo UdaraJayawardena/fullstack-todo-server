@@ -98,17 +98,3 @@ The API base URL is `http://localhost:3000/api/v1` (or whatever your base path i
 *(Detailed request bodies and response examples should ideally be linked to a separate API documentation file like Swagger or Postman collection.)*
 
 ---
-
-## 💡 Database Schema (Mongoose Models)
-
-The core structure of your data models is defined using Mongoose.
-
-#### **User Schema Example** (`src/models/User.js`)
-
-```javascript
-const UserSchema = new mongoose.Schema({
-    username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true, match: /^\S+@\S+\.\S+$/ },
-    password: { type: String, required: true, select: false }, // Password hidden by default
-    createdAt: { type: Date, default: Date.now }
-});

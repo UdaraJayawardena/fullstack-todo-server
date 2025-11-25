@@ -6,10 +6,11 @@ router.post("/", todoController.createTodo);
 
 router.get("/", todoController.getTodos);
 
-// router.get("/:id", userController.getUserById);
+router.put("/:id", todoController.updateTodo);
 
-// router.put("/:id", userController.updateUser);
+router.patch("/:id/delete", todoController.deleteTodo);
 
-// router.delete("/:id", userController.deleteUser);
+router.patch("/:id/done", todoController.updateTodoStatus);
+
 
 module.exports = router;

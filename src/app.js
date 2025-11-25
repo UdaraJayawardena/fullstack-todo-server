@@ -1,8 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const userRoutes = require("./routes/user.routes");
 const errorHandler = require("./middleware/error.middleware");
+
+const userRoutes = require("./routes/user.routes");
+const todoRoutes = require("./routes/todo.routes");
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.get("/api", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/todos", todoRoutes);
 
 app.use(errorHandler);
 
